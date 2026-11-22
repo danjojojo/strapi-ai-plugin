@@ -1,4 +1,4 @@
-import { Box, Flex, Typography } from '@strapi/design-system';
+import { Flex, Typography } from '@strapi/design-system';
 import styled from 'styled-components';
 import { ChatInput } from './ChatInput';
 

@@ -7,10 +7,14 @@ const StyledTextarea = styled(Textarea)`
   }
 `;
 
+const StyledBox = styled(Box)`
+  width: 100%;
+`;
+
 export function ChatInput() {
   return (
-    <Box width="100%">
+    <StyledBox>
       <StyledTextarea />
-    </Box>
+    </StyledBox>
   );
 }

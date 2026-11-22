@@ -7,12 +7,16 @@ const StyledMain = styled(SDSMain)`
   flex: 1;
 `;
 
+const StyledFlex = styled(Flex)`
+  flex-direction: column;
+  height: inherit;
+  width: inherit;
+`;
+
 export function Main({ children }: ChildrenWrapper) {
   return (
     <StyledMain>
-      <Flex direction="column" height="inherit" width="inherit">
-        {children}
-      </Flex>
+      <StyledFlex>{children}</StyledFlex>
     </StyledMain>
   );
 }
