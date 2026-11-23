@@ -1,6 +1,6 @@
-import { useChatContext } from '../provider/ChatProvider';
 import { type ChangeEvent, useRef } from 'react';
 import { TEXTAREA } from '../constants';
+import { useChatContext } from '../provider/ChatProvider';
 
 export function useTextarea() {
   const ref = useRef<HTMLTextAreaElement>(null);

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useNotification } from '@strapi/strapi/admin';
+import { useState } from 'react';
 
 export function useChat() {
   const [message, setMessage] = useState<string>('');
