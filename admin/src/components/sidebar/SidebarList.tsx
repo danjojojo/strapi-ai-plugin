@@ -31,10 +31,10 @@ export function SidebarList() {
       <ListsWrapper>
         <SidebarListTitle title="Chats" />
         <ListWrapper>
-          {chats.map((chat, index) => (
+          {chats?.map((chat, index) => (
             <SidebarListItem
               key={index}
-              label={chat.name}
+              label={chat.title}
               href={appendToChatsPath(chat)}
               active={selectedChat === chat}
               onClick={(e) => {

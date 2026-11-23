@@ -1,6 +1,6 @@
 import { Flex, Typography } from '@strapi/design-system';
 import styled from 'styled-components';
-import type { Theme } from '../../types/global.types';
+import type { Theme } from '../../types/ui.types';
 
 const StyledSidebarHeader = styled(Flex)`
   border-bottom: 1px solid ${({ theme }: Theme) => theme.colors.neutral150};

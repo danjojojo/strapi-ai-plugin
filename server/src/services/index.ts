@@ -1,5 +1,5 @@
-import service from "./service";
+import chats from './chats';
 
 export default {
-  service,
+  chats,
 };
