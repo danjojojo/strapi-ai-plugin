@@ -1,6 +1,6 @@
 import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
-import { PLUGIN_DEFAULT_PATH, PLUGIN_ID, PLUGIN_NAME } from './constants';
+import { PLUGIN } from './constants';
 import { getTranslation } from './utils/getTranslation';
 
 import type { StrapiApp } from '@strapi/strapi/admin';
@@ -8,21 +8,21 @@ import type { StrapiApp } from '@strapi/strapi/admin';
 const plugin: StrapiApp['appPlugins'][string] = {
   register(app) {
     app.addMenuLink({
-      to: PLUGIN_DEFAULT_PATH,
+      to: PLUGIN.DEFAULT_PATH,
       icon: PluginIcon,
       intlLabel: {
-        id: `${PLUGIN_ID}.plugin.name`,
-        defaultMessage: PLUGIN_NAME,
+        id: `${PLUGIN.ID}.plugin.name`,
+        defaultMessage: PLUGIN.NAME,
       },
       Component: () => import('./App'),
       permissions: [],
     });
 
     app.registerPlugin({
-      id: PLUGIN_ID,
+      id: PLUGIN.ID,
       initializer: Initializer,
       isReady: false,
-      name: PLUGIN_ID,
+      name: PLUGIN.ID,
     });
   },
 

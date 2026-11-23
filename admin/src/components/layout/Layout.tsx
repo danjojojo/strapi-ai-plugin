@@ -1,6 +1,6 @@
 import { Flex } from '@strapi/design-system';
 import styled from 'styled-components';
-import type { ChildrenWrapper } from '../../types/global.types';
+import type { ChildrenWrapper } from '../../types/ui.types';
 import { Main } from './Main';
 import { Sidebar } from './Sidebar';
 
