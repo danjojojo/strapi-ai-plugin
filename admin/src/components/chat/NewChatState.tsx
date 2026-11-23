@@ -1,4 +1,5 @@
 import { Flex, Typography } from '@strapi/design-system';
+import { useAuth } from '@strapi/strapi/admin';
 import styled from 'styled-components';
 import { ChatInput } from './ChatInput';
 
@@ -12,9 +13,11 @@ const StyledFlex = styled(Flex)`
 `;
 
 export function NewChatState() {
+  const user = useAuth('NewChatState', (state) => state.user);
+
   return (
     <StyledFlex>
-      <Typography variant="alpha">Welcome!</Typography>
+      <Typography variant="alpha">{`Welcome, ${user?.firstname}!`}</Typography>
       <ChatInput />
     </StyledFlex>
   );
