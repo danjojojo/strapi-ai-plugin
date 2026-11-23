@@ -9,7 +9,7 @@ export const PLUGIN = {
 
 // TEXTAREA CONFIGURATION
 export const TEXTAREA = {
-  MAX_HEIGHT: 60,
-  MIN_HEIGHT: 72,
+  MAX_HEIGHT: 40, //vh
+  MIN_HEIGHT: 72, //px
   PLACEHOLDER: 'Ask about anything',
 };

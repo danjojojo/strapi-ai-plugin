@@ -1,16 +1,18 @@
-import { Flex } from '@strapi/design-system';
 import styled from 'styled-components';
-import { NewChatState } from '../components/chat/NewChatState';
+import { Flex } from '@strapi/design-system';
+import { ChatInput } from '../components/chat/ChatInput';
 
-const StyledFlex = styled(Flex)`
+const StyledChatLayout = styled(Flex)`
   width: 70%;
-  height: inherit;
+  height: 100vh;
+  justify-content: end;
+  align-items: flex-end;
 `;
 
 export function ChatPage() {
   return (
-    <StyledFlex>
-      <NewChatState />
-    </StyledFlex>
+    <StyledChatLayout>
+      <ChatInput />
+    </StyledChatLayout>
   );
 }
