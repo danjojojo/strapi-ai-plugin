@@ -1,8 +1,10 @@
 import { Flex, ScrollArea } from '@strapi/design-system';
+import { Pencil } from '@strapi/icons';
+import { useId } from 'react';
 import styled from 'styled-components';
 import { useRouting } from '../../hooks/useRouting';
 import { useChatsContext } from '../../provider/ChatsProvider';
-import { appendToChatsPath } from '../../utils/routing';
+import { appendToChatsPath, pluginPath } from '../../utils/routing';
 import { SidebarListItem } from './SidebarListItem';
 import { SidebarListTitle } from './SidebarListTitle';
 
@@ -23,12 +25,25 @@ const ListWrapper = styled(Flex)`
 `;
 
 export function SidebarList() {
-  const { selectedChat, chats } = useChatsContext();
+  const { selectedChat, exitChat, chats } = useChatsContext();
   const { overrideNavigate } = useRouting();
 
   return (
     <ScrollArea>
       <ListsWrapper>
+        <ListWrapper>
+          <SidebarListItem
+            key={useId()}
+            label={'New chat'}
+            href={pluginPath}
+            active={selectedChat === null}
+            onClick={(e) => {
+              overrideNavigate(pluginPath, e);
+              exitChat();
+            }}
+            startIcon={<Pencil />}
+          />
+        </ListWrapper>
         <SidebarListTitle title="Chats" />
         <ListWrapper>
           {chats?.map((chat, index) => (

@@ -1,14 +1,23 @@
 import { Box, LinkButton, Typography } from '@strapi/design-system';
-import { memo, type MouseEvent } from 'react';
+import React, { memo, type MouseEvent } from 'react';
 
 interface SidebarListItemProps {
   active: boolean;
   href: string;
   label: string;
   onClick: (e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
 }
 
-function SidebarListItemBase({ active, href, label, onClick }: SidebarListItemProps) {
+function SidebarListItemBase({
+  active,
+  href,
+  label,
+  onClick,
+  startIcon,
+  endIcon,
+}: SidebarListItemProps) {
   return (
     <Box
       width="100%"
@@ -23,6 +32,8 @@ function SidebarListItemBase({ active, href, label, onClick }: SidebarListItemPr
         href={href}
         onClick={onClick}
         paddingLeft="8px"
+        startIcon={startIcon}
+        endIcon={endIcon}
       >
         <Typography
           variant="omega"

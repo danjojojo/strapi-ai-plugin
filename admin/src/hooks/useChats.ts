@@ -14,6 +14,10 @@ export function useChats() {
     setSelectedChat(chat);
   }
 
+  function exitChat() {
+    setSelectedChat(null);
+  }
+
   async function getChats() {
     const chats = await fetchChats();
     if (chats?.data) {
@@ -26,15 +30,19 @@ export function useChats() {
   }, []);
 
   useEffect(() => {
-    const matched = chats?.find((chat) => chat.documentId === chatUid);
-    if (matched) {
-      selectChat(matched);
+    if (chatUid) {
+      const matched = chats?.find((chat) => chatUid === chat.documentId);
+
+      if (matched) {
+        selectChat(matched);
+      }
     }
   }, [chats, chatUid]);
 
   return {
     chats,
     selectChat,
+    exitChat,
     selectedChat,
   };
 }
