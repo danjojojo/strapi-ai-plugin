@@ -5,6 +5,8 @@ export function useChat() {
   const [message, setMessage] = useState<string>('');
   const { toggleNotification } = useNotification();
 
+  const allowedToSend = message.trim().length > 0;
+
   function resetMessage() {
     setMessage('');
   }
@@ -22,6 +24,7 @@ export function useChat() {
 
   return {
     message,
+    allowedToSend,
     setMessage,
     submitMessage,
   };

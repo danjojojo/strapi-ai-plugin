@@ -3,9 +3,9 @@ import { PaperPlane } from '@strapi/icons';
 import { useChatContext } from '../../provider/ChatProvider';
 
 export function ChatButtons() {
-  const { message, submitMessage } = useChatContext();
+  const { allowedToSend, submitMessage } = useChatContext();
   return (
-    <IconButton label="Send" disabled={message === ''} onClick={submitMessage}>
+    <IconButton label="Send" disabled={!allowedToSend} onClick={submitMessage}>
       <PaperPlane />
     </IconButton>
   );

@@ -11,12 +11,13 @@ const StyledBox = styled(Box)`
 
 export function ChatTextInput() {
   const { message } = useChatContext();
-  const { onResize, onEnter } = useTextarea();
+  const { ref, onResize, onEnter } = useTextarea();
 
   return (
     <Flex direction="column" gap="8px" width="100%" alignItems="flex-end">
       <StyledBox>
         <Textarea
+          ref={ref}
           value={message}
           resizable={false}
           onChange={onResize}
