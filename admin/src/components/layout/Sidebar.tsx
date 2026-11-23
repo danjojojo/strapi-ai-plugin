@@ -1,6 +1,6 @@
 import { Flex } from '@strapi/design-system';
 import styled from 'styled-components';
-import type { Theme } from '../../types/global.types';
+import type { Theme } from '../../types/ui.types';
 import { SidebarHeader } from '../sidebar/SidebarHeader';
 import { SidebarList } from '../sidebar/SidebarList';
 

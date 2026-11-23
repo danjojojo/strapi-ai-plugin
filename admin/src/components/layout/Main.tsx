@@ -1,6 +1,6 @@
 import { Flex, Main as SDSMain } from '@strapi/design-system';
 import styled from 'styled-components';
-import type { ChildrenWrapper } from '../../types/global.types';
+import type { ChildrenWrapper } from '../../types/ui.types';
 
 const StyledMain = styled(SDSMain)`
   height: 100vh;

@@ -1,10 +1,10 @@
 import { PLUGIN } from '../constants';
-import type { Chat } from '../types/global.types';
+import type { Chat } from '../types/data.types';
 
 const chatsPath = `/admin/${PLUGIN.DEFAULT_PATH}/chats`;
 
 export const appendToChatsPath = (chat: Chat): string => {
-  return `${chatsPath}/${chat.uid}`;
+  return `${chatsPath}/${chat.documentId}`;
 };
 
 export const stripPath = (url: string): string => {

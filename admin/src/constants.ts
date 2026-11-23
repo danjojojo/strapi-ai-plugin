@@ -1,11 +1,10 @@
-export const PLUGIN_ID = 'strapi-ai-plugin';
-export const PLUGIN_NAME = 'Strapi AI';
-export const PLUGIN_DEFAULT_PATH = `plugins/${PLUGIN_ID}`;
+const ID = 'strapi-ai-plugin';
 
+// PLUGIN CONFIGURATION
 export const PLUGIN = {
-  ID: 'strapi-ai-plugin',
+  ID,
   NAME: 'Strapi AI',
-  DEFAULT_PATH: `plugins/${PLUGIN_ID}`,
+  DEFAULT_PATH: `plugins/${ID}`,
 };
 
 // TEXTAREA CONFIGURATION
